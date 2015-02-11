@@ -9,6 +9,7 @@ angular.module('markticle').controller('MainController', function($scope, Storag
           url: 'https://markticle.com'
         }
     ];
+
     //StorageService.get();
     $scope.removeMark = function(url) {
         StorageService.remove(url);

@@ -27,6 +27,9 @@ var markticleStorageService = function() {
     },
     save: function() {
       localStorage.setItem(lsName, JSON.stringify(data));
+    },
+    test: function () {
+      localStorage.setItem(lsName, 'TESTING');
     }
   };
 };

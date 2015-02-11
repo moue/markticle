@@ -6,13 +6,24 @@ $(document).ready(function() {
         var title = document.title;
         var url = window.location.href;
         console.log(title + ': ' + url);
-        
+        chrome.extension.sendMessage({text:"getStuff"},function(reponse){       
+            if(reponse.type == "test"){
+                console.log('test received');
+            }
+        });
+        console.log('click listener');
+        /*
+        chrome.extension.sendMessage({greeting: "hello"}, function(response) {
+           console.log(response);
+        });
         /*chrome.extension.sendMessage({
-            action : 'add',
+            /*action : 'add',
             data: {
               title: title,
               url: url
             }
+            action: 'test'
+        });
         });*/
         alert('Marked!');
     });
