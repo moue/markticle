@@ -12,10 +12,8 @@ $(document).ready(function() {
               title: title,
               url: url
             }
-        },function(reponse){       
-            if(reponse.type == "test"){
-                console.log('test received');
-            }
+        },function(response){       
+            console.log('test received');
         });
         console.log('click listener');
         /*

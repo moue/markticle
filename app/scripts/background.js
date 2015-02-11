@@ -5,13 +5,14 @@ chrome.runtime.onInstalled.addListener(function (details) {
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-
-  if(request) {
+  //if(request) {
     var storageService = new markticleStorageService();
-    if(request.action === 'add') {
+    if(request.action == 'add') {
       storageService.add(request.data);
+      sendResponse({type: "test"});
     }
-  }
+    
+  //}
 });
 
 /*
