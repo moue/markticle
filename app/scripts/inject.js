@@ -6,7 +6,13 @@ $(document).ready(function() {
         var title = document.title;
         var url = window.location.href;
         console.log(title + ': ' + url);
-        chrome.extension.sendMessage({text:"getStuff"},function(reponse){       
+        chrome.extension.sendMessage({
+            action : 'add',
+            data: {
+              title: title,
+              url: url
+            }
+        },function(reponse){       
             if(reponse.type == "test"){
                 console.log('test received');
             }
