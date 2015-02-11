@@ -12,7 +12,6 @@
           <ul>
             <li ng-repeat="mark in marks">
               <a target="_blank" ng-href="{{mark.url}}">{{mark.title}}
-                <span class="remove" ng-click="removeMark(mark.url)">remove</span>
             </li>
           </ul>
         </section>
@@ -20,10 +19,8 @@
     
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="scripts/popup.js"></script>
     <script src="scripts/controllers/main.controller.js"></script>
-    <script src="scripts/directives/main.directive.js"></script>
-    <script src="scripts/helpers/storage.helper.js"></script>
-    <script src="scripts/services/storage.service.js"></script>
-    <script src="scripts/app.js"></script>
   </body>
 </html>
+>>>>>>> marks
