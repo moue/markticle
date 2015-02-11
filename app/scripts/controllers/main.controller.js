@@ -10,12 +10,12 @@ angular.module('markticle').controller('MainController', function($scope, Storag
         }
     ];
 
-    //StorageService.get();
+    /*StorageService.get();
     $scope.removeMark = function(url) {
         StorageService.remove(url);
         $scope.marks = StorageService.get();
         if(!$scope.$$phase) {
             $scope.$apply();
         }
-    };
+    };*/
 });
