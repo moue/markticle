@@ -7,13 +7,13 @@ $(document).ready(function() {
         var url = window.location.href;
         console.log(title + ': ' + url);
         
-        chrome.extension.sendMessage({
+        /*chrome.extension.sendMessage({
             action : 'add',
             data: {
               title: title,
               url: url
             }
-        });
+        });*/
         alert('Marked!');
     });
     

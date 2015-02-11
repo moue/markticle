@@ -15,7 +15,6 @@
     "scripts": [
       "scripts/chromereload.js",
       "scripts/helpers/storage.helper.js",
-      "scripts/services/storage.service.js",
       "scripts/background.js"
     ]
   },
@@ -38,9 +37,7 @@
       ],
       "js": [
         "bower_components/jquery/jquery.min.js",
-        "scripts/inject.js",
-        "scripts/background.js",
-        "scripts/contentscript.js"
+        "scripts/inject.js"
       ],
       "run_at": "document_end",
       "all_frames": false
