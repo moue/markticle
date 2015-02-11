@@ -1,0 +1,20 @@
+angular.module('markticle').controller('MainController', function($scope, StorageService) {
+    $scope.marks = [
+        {
+          title: 'Smashing magazine',
+          url: 'http://www.smashingmagazine.com/'
+        },
+        {
+          title: 'Markticle',
+          url: 'https://markticle.com'
+        }
+    ];
+    //StorageService.get();
+    $scope.removeMark = function(url) {
+        StorageService.remove(url);
+        $scope.marks = StorageService.get();
+        if(!$scope.$$phase) {
+            $scope.$apply();
+        }
+    };
+});
