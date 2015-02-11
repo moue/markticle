@@ -1,4 +1,5 @@
 // Generated on 2015-02-10 using generator-chrome-extension 0.2.11
+
 'use strict';
 
 // # Globbing
