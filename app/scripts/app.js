@@ -1,1 +1,1 @@
-angular.module('markticle', []);
+var myApp = angular.module('AngularChromeEx', []);

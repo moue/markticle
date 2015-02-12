@@ -1,4 +1,4 @@
-function markticleStorageService() {
+var markticleStorageService = function() {
   var lsName = 'marks';
   var data = localStorage.getItem(lsName) ? JSON.parse(localStorage.getItem(lsName)) : [];
 

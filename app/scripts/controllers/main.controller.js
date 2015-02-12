@@ -9,4 +9,5 @@ angular.module('markticle').controller('MainController', function($scope, Storag
 		  url: 'https://markticle.com'
 		}
 	];
+
 });
