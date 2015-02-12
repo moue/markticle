@@ -1,3 +1,3 @@
-#Markticle 
+#Chrome Extension using AngularJS
 
-Read the [wiki](https://github.com/moue/markticle/wiki) for the latest updates on this repo.
+This was made following a YouTube tutorial by Mark Tucker. The video is [here](https://www.youtube.com/watch?v=Bxg-5C3F8qo).
