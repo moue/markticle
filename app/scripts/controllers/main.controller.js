@@ -1,4 +1,4 @@
-angular.module('markticle').controller('MainController', function($scope) {
+angular.module('markticle').controller('MainController', function($scope, StorageService) {
   $scope.marks = [
 		{
 		  title: 'Smashing magazine',
