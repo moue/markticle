@@ -7,15 +7,8 @@
         "16": "images/icon-16.png",
         "128": "images/icon-128.png"
     },
-    "permissions": [
-        "storage"
-    ],
+    "permissions": [ "http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "cookies", "tabs", "notifications" ],
     "default_locale": "en",
-    "background": {
-        "scripts": [
-            "scripts/chromereload.js"
-        ]
-    },
     "browser_action": {
         "default_icon": {
             "19": "images/icon-19.png",

@@ -10,7 +10,7 @@ chrome.extension.onMessage.addListener(
 				var href=$(this).attr('href');
 				if (href != null && href.indexOf("http")==0) {
 					// only add urls that start with http
-					pageInfo.url = href;
+					pageInfo.url = href
 					pageInfos.push(pageInfo);
 				}
 			});
