@@ -1,15 +1,9 @@
-body {
-  font-family: Helvetica, sans-serif;
+#datetime {
+  text-align: center;
 }
-
-#main_wrapper {
-  min-width: 500px;
-  width: 500px;
-  min-height: 10px;
-  height: 300px;
-  margin: 12px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+#datetime h1 {
+  font-size: 6.1em;
+}
+#datetime h2 {
+  font-size: 1.0em;
 }

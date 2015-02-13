@@ -1,3 +1,3 @@
-#Chrome Extension using AngularJS
+#Rapid chrome app development with angular
 
-This was made following a YouTube tutorial by Mark Tucker. The video is [here](https://www.youtube.com/watch?v=Bxg-5C3F8qo).
+This was made following a [tutorial](http://www.ng-newsletter.com/posts/chrome-apps-on-angular.html) by ng-newsletter.

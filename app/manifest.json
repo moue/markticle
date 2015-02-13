@@ -1,37 +1,37 @@
 {
-    "name": "AngularChromeEx",
-    "version": "0.0.1",
+    "name": "Presently",
+    "version": "1.0",
     "manifest_version": 2,
-    "description": "Chrome extensions with AngularJS",
+    "default_locale": "en",
+    "description": "A Currently clone",
     "icons": {
-        "16": "images/icon-16.png",
         "128": "images/icon-128.png"
     },
-    "permissions": [ "http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "cookies", "tabs", "notifications" ],
-    "default_locale": "en",
     "browser_action": {
         "default_icon": {
             "19": "images/icon-19.png",
             "38": "images/icon-38.png"
         },
-        "default_title": "AngularJSChromeEx",
-        "default_popup": "popup.html"
+        "default_title": "Presently"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-            "css": [
-                "styles/main.css"
-            ],
-            "js": [
-                "bower_components/jquery/jquery.min.js",
-                "scripts/content.js"
-            ],
-            "run_at": "document_end",
-            "all_frames": false
-        }
+    "background": {
+        "scripts": ["bower_components/angular/angular.min.js"]
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'",
+    "chrome_url_overrides" : {
+        "newtab" : "tab.html"
+    },
+    "content_scripts": [ {
+    "js": [ 
+        "bower_components/jquery/jquery.min.js",
+        "scripts/content.js"
+    ],
+    "matches": [ "*://*/*" ],
+    "run_at": "document_start"
+    } ],
+    "minimum_chrome_version": "18",
+    "permissions": [
+        "http://api.wunderground.com/api/",
+        "http://autocomplete.wunderground.com/api"
     ]
 }

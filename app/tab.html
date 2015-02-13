@@ -1,0 +1,27 @@
+<!doctype html>
+<html data-ng-app="myApp" data-ng-csp="" ng-csp>
+  <head>
+    <meta charset="UTF-8">
+    <title>Presently</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <div ng-controller="MainCtrl">
+        <div id="datetime">
+          <h1>{{date.raw | date: 'hh mm ss'}}</h1>
+          <h2>{{ date.raw | date:'EEEE, MMMM yyyy' }}</h2>
+        </div>
+        <div id="forecast">
+          <pre>{{ weather.forecast | json }}</pre>
+        </div>
+      </div>
+    </div>
+      <script src="bower_components/jquery/jquery.min.js"></script>
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="scripts/app.js"></script>
+  </body>
+</html>
