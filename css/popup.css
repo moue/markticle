@@ -14,3 +14,14 @@ body {
   user-select: none;
 }
 
+
+#forecast ul li {
+  font-size: 4.5em;
+  text-align: center;
+}
+#forecast ul li h3 {
+  font-size: 1.4em;
+}
+#forecast ul li .today h3 {
+  font-size: 1.8em;
+}

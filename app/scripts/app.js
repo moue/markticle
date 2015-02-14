@@ -22,15 +22,18 @@ angular.module('myApp', [])
                 $http({
                     method: 'GET',
                     url: self.getUrl("forecast", city),
-                    cache: true
+                    cache: true,                    
                 }).success(function(data) {
                     // The wunderground API returns the 
                     // object that nests the forecasts inside
                     // the forecast.simpleforecast key
                     d.resolve(data.forecast.simpleforecast);
+                    console.log(self.getUrl("forecast", city));
+                    console.log(data.forecast.simpleforecast)
                 }).error(function(err) {
                     d.reject(err);
                 });
+
                 return d.promise;
             }   
         }
@@ -48,6 +51,7 @@ angular.module('myApp', [])
     $scope.weather = {}
     Weather.getWeatherForecast("CA/San_Francisco").then(function(data) {
         $scope.weather.forecast=data;
+    console.log($scope.weather)
     });
 
     // Update function
