@@ -1,5 +1,16 @@
-angular.module('myApp', [])
-
+angular.module('myApp', ['ngRoute'])
+.config(function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'templates/home.html', 
+      controller: 'MainCtrl'
+    })
+    .when('/settings', {
+      templateUrl: 'templates/settings.html',
+      controller: 'SettingsCtrl'
+    })
+    .otherwise({redirectTo: '/'});
+})
 .provider('Weather', function() {
     var apiKey = "";
     this.setAPIKey = function(key) {
@@ -40,16 +51,53 @@ angular.module('myApp', [])
         
     };
 })
+.factory('UserService', function() {
+    var defaults  = {
+        location : 'autoip'
+    };
+    var service = {
+        user: {},
+        save: function() {
+            sessionStorage.presently = angular.toJson(service.user);
+        },
+        restore: function() {
+            // pull from sessionStorage
+            service.user = angular.fromJson(sessionStorage.presently) || defaults
+
+            return service.user;
+        }
+    };
+    return service;
+})
 .config(function(WeatherProvider) {
     WeatherProvider.setAPIKey('e25f96c99908ace8');
 
 })
+.controller('SettingsCtrl', function($scope, UserService) {
+    $scope.user = UserService.user;
+    $scope.save = function() {
+        UserService.save();
+    }
+})
+.directive('autoFill', function($timeout)) {
+    return {
+        restrict: 'EA',
+        scope: {
+            autoFill: '&',
+            ngModil: '='
+        },
+        compile: function(tEle, tAttrs) {
+            //our compile function
+            return function(scope, ele, attrs, ctrl)
+        }
+    }
+}
 .controller('MainCtrl', function($scope, $timeout, Weather) {
     // Build the date object
     $scope.date = {};
 
     $scope.weather = {}
-    Weather.getWeatherForecast("CA/San_Francisco").then(function(data) {
+    Weather.getWeatherForecast($scope.user.location).then(function(data) {
         $scope.weather.forecast=data;
     console.log($scope.weather)
     });

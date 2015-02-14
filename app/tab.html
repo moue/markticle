@@ -10,28 +10,11 @@
   </head>
   <body>
     <div class="container">
-      <div ng-controller="MainCtrl">
-        <div id="datetime">
-          <h1>{{date.raw | date: 'hh mm ss'}}</h1>
-          <h2>{{ date.raw | date:'EEEE, MMMM yyyy' }}</h2>
-        </div>
-        <div id="forecast">
-          <ul class="row list-unstyled">
-            <li ng-repeat="day in weather.forecast.forecastday" class="col-md-3">
-              <div ng-class="{today: $index == 0}">
-                <img class="{{ day.icon }}" ng-src="{{ day.icon_url }}" />
-                <h3>{{ day.high.fahrenheit }}</h3>
-                <h4 ng-if="$index == 0">Now</h4>
-                <h4 ng-if="$index != 0">{{ day.date.weekday }}</h4>
-              </div>
-            </li>
-          </ul>
-          <pre>{{ weather.forecast | json }}</pre>
-        </div>
-      </div>
+      <div ng-view></div>
     </div>
       <script src="bower_components/jquery/jquery.min.js"></script>
       <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/angular-route/angular-route.min.js"></script>
       <script src="scripts/app.js"></script>
   </body>
 </html>
